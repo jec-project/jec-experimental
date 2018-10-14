@@ -14,14 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/**
- * The <code>MediaConnectorRefs</code> Enum provides values that define the
- * references of the decorator connectors used by the Adaptive Design API.
- */
-export enum MediaConnectorRefs {
+import {ClassLoader, DefaultClassLoader} from "jec-commons";
 
-  /**
-   * Defines the reference for connectors for the <code>@Media</code> decorator.
-   */
-  MEDIA_CONNECTOR_REF = "com.jec.experimental.adaptive.annotations.Media"
-}
+/*!
+ * This module constains utilities used by the MediaFailTest test suite.
+ */
+
+// Utilities:
+const MEDIA_CLASS:string = process.cwd() + "/utils/test-utils/classes/adaptive/MediaTestClass";
+const LOADER:ClassLoader = new DefaultClassLoader();
+export const buildClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(MEDIA_CLASS);
+  return new ClassRef();
+};

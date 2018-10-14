@@ -14,14 +14,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/**
- * The <code>MediaConnectorRefs</code> Enum provides values that define the
- * references of the decorator connectors used by the Adaptive Design API.
+/*!
+ * This module constains utilities used by the AdaptiveErrorTest test suite.
  */
-export enum MediaConnectorRefs {
 
-  /**
-   * Defines the reference for connectors for the <code>@Media</code> decorator.
-   */
-  MEDIA_CONNECTOR_REF = "com.jec.experimental.adaptive.annotations.Media"
-}
+// Utilities:
+export const ERROR_MSG:string = "invalid media rule";

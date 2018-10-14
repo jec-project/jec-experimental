@@ -14,14 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/**
- * The <code>MediaConnectorRefs</code> Enum provides values that define the
- * references of the decorator connectors used by the Adaptive Design API.
- */
-export enum MediaConnectorRefs {
+import "mocha";
+import {expect} from "chai";
 
-  /**
-   * Defines the reference for connectors for the <code>@Media</code> decorator.
-   */
-  MEDIA_CONNECTOR_REF = "com.jec.experimental.adaptive.annotations.Media"
-}
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/adaptive/MediaFailTestUtils";
+
+// Test:
+describe("@Media", ()=> {
+
+  it("should throw an error since no context has been declared for this decorator", function() {
+    expect(utils.buildClassRef).to.throw(Error);
+  });
+});
